@@ -11,7 +11,7 @@
 
     <h1>Projects</h1>
     <div id="card-container">
-      <Cardpro1
+      <Cardprog
         v-for="project of filtered"
         :key="project.id"
         :name="project.name"
@@ -40,10 +40,14 @@
 
     const arr = [];
 
+    let total = 0;
+
     // Filtering the list
     for (let project of projects.value) {
       if (price.value > 0 && project.price >= price.value) continue;
-      if ("Green" !== "all" && project.areaname !== "Green" && project.areaname1 !== "Green") continue;
+      if (project.areaname == "Green" || project.areaname1 == "Green") continue;
+      total=total+1;
+      if (total<=5) continue;
       arr.push(project);
     }
 

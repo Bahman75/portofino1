@@ -11,7 +11,7 @@
 
     <h1>Projects</h1>
     <div id="card-container">
-      <Cardpro1
+      <Cardproh
         v-for="project of filtered"
         :key="project.id"
         :name="project.name"
@@ -43,7 +43,7 @@
     // Filtering the list
     for (let project of projects.value) {
       if (price.value > 0 && project.price >= price.value) continue;
-      if ("Health" !== "all" && project.areaname !== "Health" && project.areaname1 !== "Health") continue;
+      if (project.areaname == "Health" || project.areaname1 == "Health") continue;
       arr.push(project);
     }
 
