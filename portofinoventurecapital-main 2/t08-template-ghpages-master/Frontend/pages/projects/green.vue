@@ -40,7 +40,7 @@
 
     const arr = [];
 
-    let total = 0;
+    const total = 0;
 
     // Filtering the list
     for (let project of projects.value) {
