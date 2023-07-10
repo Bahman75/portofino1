@@ -46,7 +46,7 @@
   for (let project of projects.value) {
     if (price.value > 0 && project.price >= price.value) continue;
     if (project.areaname === "Green" || project.areaname1 === "Green") continue;
-    if (count < 5) continue; // Interrompe o loop quando 5 projetos forem adicionados à lista
+    if (count < 6) continue; // Interrompe o loop quando 5 projetos forem adicionados à lista
     arr.push(project);
     count++;
   }
