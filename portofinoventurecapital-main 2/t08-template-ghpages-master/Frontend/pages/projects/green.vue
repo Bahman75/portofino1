@@ -40,20 +40,22 @@
 
     const arr = [];
 
-    const total = 0;
+    let count = 0;
 
-    // Filtering the list
-    for (let project of projects.value) {
-      if (price.value > 0 && project.price >= price.value) continue;
-      if (project.areaname == "Green" || project.areaname1 == "Green") continue;
-      total=total+1;
-      if (total<=5) continue;
-      arr.push(project);
-    }
+  // Filtering the list
+  for (let project of projects.value) {
+    if (price.value > 0 && project.price >= price.value) continue;
+    if (project.areaname === "Green" || project.areaname1 === "Green") continue;
 
-    // Returning the filtered list
-    return arr;
-  });
+    arr.push(project);
+    count++;
+
+    if (count === 5) break; // Interrompe o loop quando 5 projetos forem adicionados à lista
+  }
+
+  // Returning the filtered list
+  return arr;
+});
 </script>
 
 <style>
